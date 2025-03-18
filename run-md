@@ -1,1 +1,27 @@
+## Running the Analysis Pipeline
+This guide explains how to execute the real estate data analysis pipeline.
+
+### Steps to Run the Analysis
+Run the following scripts in order:
+
+```bash
+# Premium location analysis
+python3 premium-locations/premium_address_analysis.py
+
+# Time adjustment analysis
+python3 time-adjustments/time_adjusted_analysis.py
+
+# STR impact analysis
+python3 str-analysis/str_gondola_analysis.py
+
+## Output Files
+Each script generates CSV outputs that serve as inputs for subsequent steps:
+
+| File Name                         | Description                          |
+|------------------------------------|--------------------------------------|
+| `merged_data.csv`                 | Initial merged dataset               |
+| `cleaned_real_estate_dataset.csv` | Dataset after cleaning               |
+| `real_estate_with_condition.csv`  | Dataset with property condition data |
+| `featured_real_estate_data.csv`   | Dataset with engineered features     |
+
 
