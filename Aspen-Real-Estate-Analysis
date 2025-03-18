@@ -1,0 +1,81 @@
+# Aspen Real Estate Analysis
+
+A modular real estate analysis toolkit for Aspen property market modeling and price prediction.
+
+## Project Structure
+
+- **data-prep/**: Data loading, cleaning, and preparation scripts
+  - `data_prep.py`: Handles loading CSV/Excel files and basic preprocessing
+  - `standalone-condition-script.py`: Extracts property condition from feature text
+
+- **feature-engineering/**: Feature creation for modeling
+  - `feature_engineering.py`: Creates advanced features based on correlation analysis
+  - Implements bedroom weights, square footage tiers, and neighborhood pricing premiums
+
+- **premium-locations/**: Analysis of premium streets and buildings
+  - `premium_address_analysis.py`: Identifies addresses commanding premium prices
+  - Calculates price premiums for luxury streets and buildings
+
+- **str-analysis/**: Short-term rental impact analysis
+  - `str_gondola_analysis.py`: Analyzes STR-eligible properties near gondola
+  - Quantifies premiums for properties with STR eligibility
+
+- **time-adjustments/**: Time-based normalization for historical data
+  - `time_adjusted_analysis.py`: Calculates 4-quarter rolling averages
+  - Creates time adjustment factors for comparing properties across different periods
+
+## Usage
+
+Execute the scripts in the following order:
+
+1. **Data Merging**
+```bash
+python3 data-prep/merge_script.py
+```
+
+2. **Data Cleaning**
+```bash
+python3 data-prep/cleaning_script.py
+python3 data-prep/standalone-condition-script.py
+```
+
+3. **Feature Engineering**
+```bash
+python3 feature-engineering/feature_engineering.py
+```
+
+4. **Analysis Modules**
+```bash
+# Premium location analysis
+python3 premium-locations/premium_address_analysis.py
+
+# Time adjustment analysis
+python3 time-adjustments/time_adjusted_analysis.py
+
+# STR impact analysis
+python3 str-analysis/str_gondola_analysis.py
+```
+
+## Key Findings
+
+- **Property Condition** significantly impacts pricing in premium neighborhoods
+- **STR-Eligible** properties near the gondola show a 7.11% price premium
+- **Premium Streets** like Spring St and Monarch St command 15-20% higher prices
+- **4-Quarter Rolling Averages** provide effective time normalization for historical data
+
+## Requirements
+
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- scipy
+
+Install dependencies with:
+```bash
+pip install -r requirements.txt
+```
+
+## License
+
+MIT
